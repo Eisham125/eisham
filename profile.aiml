@@ -1,0 +1,22 @@
+<aiml>
+	<category>
+	    <pattern>EISHAM</pattern>
+	    <template>i am fine</template>
+    </category>
+	 <category>
+        <pattern>TELL ME PART OF SPEECH OF *</pattern>
+        <template>
+            <think><set name="wordspeech"><star /></set></think>
+            <srai>SPEECH</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>SPEECH</pattern>
+        <template><get name="speech"></get></template>
+    </category>
+    <category>
+        <pattern>TELL ME VOCABLARY *</pattern>
+        <template><srai>TELL ME PART OF SPEECH OF <star /></srai></template>
+    </category>
+
+</aiml>
