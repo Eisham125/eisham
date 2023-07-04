@@ -1,63 +1,91 @@
-Created Date: 18 Nov 2018
 
-## INSTALLATION:
-<br> `pip install -r requirements.txt`
-<br><br>
-Python EXECUTION: Run `conversation.py` to run the bot<br>
-Web api EXECUTION: Run `bot.py`, once it runs, open the link and start chatting with the bot... <br>
+# Project Title
+   chatbot 
 
-## DEMO
-![chatbotgif](https://github.com/pemagrg1/Easy-Chatbot/blob/master/multimedia/pema.gif)
+README.md
 
-# Easy Chatbot using AIML
+# Chatbot with Flask and Neo4j
 
-As said in Wikipedia, AIML [Artificial Intelligence Markup Language] is an XML dialect for creating natural language software agents.
+This is a chatbot implementation using Flask framework and Neo4j database. The chatbot provides a user-friendly interface with features like a login page, user sign-up, and chat functionality. It utilizes various technologies and techniques, such as AIML, NLP, sentiment analysis, web scraping, and Neo4j for account validation and chat storage.
 
-These days as you can see that Chatbots are in high trend when it comes to Artificial Intelligence. As most of the organizations have already started implementing chatbots on their sites especially on e-commerce websites. 
+## Table of Contents
 
-Some of the best examples of chatbots are:
-1. Replika
-2. Watson Assistant
-3. Alexa
-4. Dialogflow
-5. Cleverbot
+- [Introduction](#introduction)
+- [Libraries](#libraries)
+- [Login](#login)
+- [AIML](#aiml)
+- [Natural Language Processing (NLP)](#natural-language-processing-nlp)
+- [Neo4j](#neo4j)
+- [Spell Checking](#spell-checking)
+- [Gender Prediction](#gender-prediction)
+- [Web Scraping](#web-scraping)
+- [Prolog](#prolog)
+- [Sentiment Analysis](#sentiment-analysis)
+- [Conclusion](#conclusion)
 
-So you want to build a chatbot? No worries! 
+## Introduction
 
-We will be using AIML because to build a chatbot using NLP/ML/Deep Learning takes a lot of time to build while AIML helps to build a chatbot easily but the only problem is that you need to feed as many data as you can for the bot to learn and here data doesn't just mean the questions and its category but also the question pattern.
+The chatbot is built using Flask framework and provides a user-friendly interface. Users can log in, sign up, and engage in conversations with the chatbot. It is designed to understand and respond to natural language queries. If the chatbot cannot find the answer from its existing knowledge or WordNet, it searches Wikipedia to provide relevant information. Additionally, the chatbot applies sentiment analysis to determine the user's mood. The chat history is stored in a database, organized by daily episodes, to maintain context across sessions.
 
-To understand about AIML coding structure, refer to the previous article published: AIML TUTORIAL
-Hope you know from the previous articles what each tag denotes and how to get started. 
+## Libraries
 
-Here you will need 3 files:
+The chatbot utilizes the following libraries:
 
-1 Python file: conversation.py<br>
-2 aiml file: learningFileList.aiml, and conversation.aiml<br>
+- Flask: For creating the web application and login module.
+- AIML: Artificial Intelligence Markup Language for defining chatbot patterns and responses.
+- TensorFlow: Used for gender prediction and enhancing the chatbot's knowledge.
+- BeautifulSoup: A library for web scraping and parsing HTML.
+- Pytholog: Used for applying relationships and making connections among nodes.
+- NLTK: Natural Language Toolkit for various NLP tasks, including sentiment analysis and word processing.
+- GingerIt: Library for spell checking and correction.
+- NLP Portion: Custom module for named entity recognition, grammar rules, and question identification.
+- Transformers: Used for BERT tokenizer and sequence classification.
+- Spacy: Library for advanced natural language processing tasks.
+- Requests: For making HTTP requests.
+- Py2neo: Python wrapper for interacting with the Neo4j graph database.
+- Kernel (AIML): Kernel object for loading AIML files and processing chatbot responses.
+- Glob: Used for file handling and pattern matching.
 
-##### conversation.py
-code for loading and running the bot
+## Login
 
-##### learningFilesList.aiml
-code to load the files to train
+The chatbot's login module is implemented using Flask. Users can create an account, log in, and access the chatbot's functionality.
 
-##### data folder
-Data folder contains all the AIML files<br>
-Each aiml file contains the conversation patterns which the kernel will load for chatting
+## AIML
 
-Note: Kernel object is the public interface to the AIML interpreter. "learn" method loads the contents of an AIML file into the kernel. While "respond" method is used to get the response from the learned AIML file. And "LEARN AIML" is the pattern that k.respond from conversation.py calls. The <learn> tag loads the AIML file to respond.
+AIML (Artificial Intelligence Markup Language) is an XML-based language used for building chatbots and conversational agents. It provides a structured format for defining patterns and responses, allowing the chatbot to understand and generate human-like conversations.
 
-#### Demo OUTPUT:
-```Loading learning_file_list.aiml…done (0.07 seconds)
-Loading conversation.aiml…done (0.00 seconds)
-User > Hello Bot
-bot > Hello! Nice to meet you.
-```
+## Natural Language Processing (NLP)
 
-easy wasn't it? Add more to categories to the conversation.aiml so that your bot can answer to any questions! You can also make your chatbot to any domain specific like hotel booking, food ordering, flight booking,etc.
+The chatbot incorporates natural language processing techniques to understand and process user queries. It utilizes various NLP tasks such as tokenization, part-of-speech tagging, and grammar rules to enhance the chatbot's conversational abilities.
 
-Try it out and let me know how it goes 😍
+## Neo4j
 
+Neo4j is a highly scalable and popular graph database management system. It efficiently stores, manages, and queries interconnected data using a graph-based data model. In this code, Neo4j is used for account validation and chat storage. Nodes are created to store login information and chat data, enabling effective data management.
 
-### PS:
-I added more data from the aiml package which you can get after installing: `pip install aiml`
-<br>HTML template: https://bootsnipp.com/snippets/0e3Ma
+## Spell Checking
+
+To improve user input correction, the chatbot utilizes the GingerIt library for spell checking and correction. This enhances the efficiency of the chatbot by providing accurate responses.
+
+## Gender
+
+ Prediction
+
+The chatbot employs TensorFlow and Transformers, machine learning technologies, to predict the gender of users. This enhances the chatbot's knowledge and enables personalized responses.
+
+## Web Scraping
+
+If the chatbot cannot find the required information from WordNet or NLP, it applies web scraping techniques. It retrieves data from Wikipedia, particularly the introduction lines, to provide relevant information to the user.
+
+## Prolog
+
+Prolog is utilized to apply relationships and establish connections among nodes. It facilitates efficient data retrieval and enables the chatbot to provide accurate and contextually relevant responses.
+
+## Sentiment Analysis
+
+The code uses the SentimentIntensityAnalyzer class from the NLTK sentiment module to perform sentiment analysis on user queries. It calculates a compound sentiment score and determines the sentiment label as positive, negative, or neutral. This helps the chatbot understand the user's mood and tailor responses accordingly.
+
+## Conclusion
+
+The chatbot with Flask and Neo4j offers an interactive and artificial environment for engaging conversations. By incorporating various technologies and techniques, such as AIML, NLP, sentiment analysis, web scraping, and Neo4j, the chatbot aims to provide a more immersive and intelligent user experience.
+
+Feel free to explore the code and customize it according to your requirements!
