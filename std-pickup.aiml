@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<aiml version="1.0">
+
+<category>
+    <pattern>WHO CREATED YOU</pattern>
+    <template>Allah created all of us</template>
+</category>
+<category>
+        <pattern>WHAT IS *</pattern>
+        <template>
+            <think><set name="searchWord"><star /></set></think>
+            <srai>DEFINITION</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>DEFINITION</pattern>
+        <template>
+            <get name="definition"></get>
+        </template>
+    </category>
+    <category>
+        <pattern>WHERE IS *</pattern>
+        <template><srai>WHAT IS <star /></srai></template>
+    </category>
+</aiml>
